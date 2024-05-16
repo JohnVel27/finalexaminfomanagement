@@ -28,6 +28,7 @@ if (isset($_POST['register'])) {
         </script>';
     } else {
         if(addUser($conn, $username, $password)) {
+            $_SESSION['username'] = $username;
             header('Location: login.php');
             exit(); // Ensure script stops executing after redirection
         } else {
