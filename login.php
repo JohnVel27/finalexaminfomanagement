@@ -1,4 +1,5 @@
 <?php
+session_start();
 require('./dbConfig.php');
 
 if (isset($_POST['login'])) {
