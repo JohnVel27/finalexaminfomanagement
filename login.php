@@ -21,7 +21,9 @@ if (isset($_POST['login'])) {
 
             // Verify the entered password with the hashed password
             if (password_verify($password, $hashedPassword)) {
+                $_SESSION['username'] = $username;
                 header('Location: ordermanagement.php');
+                exit();
             } else {
                 echo 'Invalid Credential';
             }
